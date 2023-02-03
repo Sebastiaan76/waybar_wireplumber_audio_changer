@@ -42,16 +42,12 @@ output = ''
 sinks = parse_wpctl_status()
 for items in sinks:
     if items['sink_name'].endswith(" - Default"):
-        output += f"--> {items['sink_name']}\n"
+        output += f"<b>-> {items['sink_name']}</b>\n"
     else:
         output += f"{items['sink_name']}\n"
 
 # Call wofi and show the list. take the selected sink name and set it as the default sink
-selected_sink_name = subprocess.check_output(f"echo '{output}' | wofi --show=dmenu --location=top_right --width=600 --height=300 --xoffset=-60", shell=True, encoding='utf-8').strip()
+selected_sink_name = subprocess.check_output(f"echo '{output}' | wofi --show=dmenu --hide-scroll --allow-markup --define=hide_search=true --location=top_right --width=600 --height=200 --xoffset=-60", shell=True, encoding='utf-8').strip()
 sinks = parse_wpctl_status()
 selected_sink = next(sink for sink in sinks if sink['sink_name'] == selected_sink_name)
 subprocess.run(f"wpctl set-default {selected_sink['sink_id']}", shell=True)
-
-
-
-
