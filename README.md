@@ -3,6 +3,8 @@ A script that uses wofi and wpctl to change audio sinks. Can be used with waybar
 
 Needs to have wofi installed, as well as wireplumber in order to use the wpctl command.
 
+![Example Screenshot](example.png)
+
 # How to Install  
 copy the ```audio_changer.py``` file to your ```~/.config/waybar/scripts/``` folder.   
 Then: ```chmod +x audio_changer.py```    
