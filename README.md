@@ -8,7 +8,7 @@ Needs to have wofi installed, as well as wireplumber in order to use the wpctl c
 # How to Install  
 copy the ```audio_changer.py``` file to your ```~/.config/waybar/scripts/``` folder.   
 Then: ```chmod +x audio_changer.py```    
-You can then add it to the .config/waybar/config.jsonc file under pulseaudio **'onclick'** property as below:  
+You can then add it to the ```.config/waybar/config.jsonc``` file under pulseaudio **'on-click'** property as below:  
 ```"pulseaudio": {
         "format": "{icon} {volume}%",
         "tooltip": false,
